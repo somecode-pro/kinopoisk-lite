@@ -1,3 +1,3 @@
 <?php
 
-include __DIR__.'/pages/'.$_GET['uri'].'.php';
+require_once __DIR__.'/vendor/autoload.php';
