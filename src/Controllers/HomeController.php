@@ -2,10 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Kernel\View\View;
+
 class HomeController
 {
     public function index(): void
     {
-        include_once APP_PATH.'/views/pages/home.php';
+        $view = new View();
+
+        $view->page('home');
     }
 }
