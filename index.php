@@ -2,6 +2,8 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
-dd(['Вау! Я работаю!']);
+$routes = require_once __DIR__.'/config/routes.php';
 
-echo 'Теперь все запросы будут перенаправляться на этот файл';
+$uri = $_SERVER['REQUEST_URI'];
+
+$routes[$uri]();
