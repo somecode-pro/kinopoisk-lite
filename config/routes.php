@@ -7,7 +7,7 @@ use App\Router\Route;
 return [
     Route::get('/home', [HomeController::class, 'index']),
     Route::get('/movies', [MovieController::class, 'index']),
-    Route::post('/test', function () {
-        include_once APP_PATH.'/views/pages/movies.php';
+    Route::get('/test', function () {
+        echo 'test';
     }),
 ];
