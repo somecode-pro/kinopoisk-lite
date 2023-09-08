@@ -9,4 +9,7 @@ return [
     Route::get('/movies', function () {
         include_once APP_PATH.'/views/pages/movies.php';
     }),
+    Route::post('/test', function () {
+        include_once APP_PATH.'/views/pages/movies.php';
+    }),
 ];
