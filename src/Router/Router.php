@@ -14,11 +14,30 @@ class Router
         $this->initRoutes();
     }
 
-    public function dispatch(string $uri): void
+    public function dispatch(string $uri, string $method): void
     {
-        $routes = $this->getRoutes();
+        $route = $this->findRoute($uri, $method);
 
-        $routes[$uri]();
+        if (! $route) {
+            $this->notFound();
+        }
+
+        $route->getAction()();
+    }
+
+    private function notFound(): void
+    {
+        echo '404 | Not Found';
+        exit;
+    }
+
+    private function findRoute(string $uri, string $method): Route|false
+    {
+        if (! isset($this->routes[$method][$uri])) {
+            return false;
+        }
+
+        return $this->routes[$method][$uri];
     }
 
     private function initRoutes(): void
