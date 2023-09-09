@@ -23,6 +23,14 @@ class View
 
     public function component(string $name): void
     {
-        include_once APP_PATH."/views/components/$name.php";
+        $componentPath = APP_PATH."/views/components/$name.php";
+
+        if (! file_exists($componentPath)) {
+            echo "Component $name not found";
+
+            return;
+        }
+
+        include_once $componentPath;
     }
 }
