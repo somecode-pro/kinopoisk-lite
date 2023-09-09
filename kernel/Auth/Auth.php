@@ -34,19 +34,25 @@ class Auth implements AuthInterface
         return true;
     }
 
-    public function logout(): void
-    {
-        // TODO: Implement logout() method.
-    }
-
     public function check(): bool
     {
-        // TODO: Implement check() method.
+        return $this->session->has($this->sessionField());
     }
 
     public function user(): ?array
     {
-        // TODO: Implement user() method.
+        if (! $this->check()) {
+            return null;
+        }
+
+        return $this->db->first($this->table(), [
+            'id' => $this->session->get($this->sessionField()),
+        ]);
+    }
+
+    public function logout(): void
+    {
+        $this->session->remove($this->sessionField());
     }
 
     public function table(): string
