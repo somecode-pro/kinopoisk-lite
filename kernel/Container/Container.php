@@ -56,7 +56,7 @@ class Container
         $this->view = new View($this->session);
         $this->config = new Config();
         $this->database = new Database($this->config);
-        $this->auth = new Auth($this->database, $this->session);
+        $this->auth = new Auth($this->database, $this->session, $this->config);
         $this->router = new Router(
             $this->view,
             $this->request,

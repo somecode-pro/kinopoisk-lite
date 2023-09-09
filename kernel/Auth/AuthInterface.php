@@ -11,4 +11,12 @@ interface AuthInterface
     public function check(): bool;
 
     public function user(): ?array;
+
+    public function table(): string;
+
+    public function username(): string;
+
+    public function password(): string;
+
+    public function sessionField(): string;
 }
