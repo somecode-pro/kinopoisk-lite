@@ -5,7 +5,7 @@ return [
     'host' => 'database',
     'port' => 3306,
     'database' => 'lamp',
-    'username' => 'lamp1',
+    'username' => 'lamp',
     'password' => 'lamp',
     'charset' => 'utf8',
 ];
