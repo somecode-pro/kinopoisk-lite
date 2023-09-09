@@ -2,7 +2,7 @@
 
 namespace App\Kernel\Session;
 
-class Session
+class Session implements SessionInterface
 {
     public function __construct()
     {
