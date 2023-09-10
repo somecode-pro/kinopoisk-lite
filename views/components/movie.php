@@ -5,7 +5,7 @@
  */
 ?>
 
-<a href="movie.html" class="card text-decoration-none movies__item">
+<a href="/movie?id=<?php echo $movie->id() ?>" class="card text-decoration-none movies__item">
     <img src="<?php echo $storage->url($movie->preview()) ?>" height="200px" class="card-img-top" alt="<?php echo $movie->name() ?>">
     <div class="card-body">
         <h5 class="card-title"><?php echo $movie->name() ?></h5>

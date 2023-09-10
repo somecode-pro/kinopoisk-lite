@@ -26,4 +26,5 @@ return [
     Route::post('/admin/movies/destroy', [MovieController::class, 'destroy']),
     Route::get('/admin/movies/update', [MovieController::class, 'edit']),
     Route::post('/admin/movies/update', [MovieController::class, 'update']),
+    Route::get('/movie', [MovieController::class, 'show']),
 ];

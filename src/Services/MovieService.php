@@ -36,6 +36,7 @@ class MovieService
                 $movie['description'],
                 $movie['preview'],
                 $movie['category_id'],
+                $movie['created_at'],
             );
         }, $movies);
     }
@@ -63,6 +64,7 @@ class MovieService
             $movie['description'],
             $movie['preview'],
             $movie['category_id'],
+            $movie['created_at'],
         );
     }
 
@@ -94,6 +96,7 @@ class MovieService
                 $movie['description'],
                 $movie['preview'],
                 $movie['category_id'],
+                $movie['created_at'],
             );
         }, $movies);
     }
