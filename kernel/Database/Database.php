@@ -53,7 +53,7 @@ class Database implements DatabaseInterface
         return $result ?: null;
     }
 
-    public function get(string $table, array $conditions = []): array
+    public function get(string $table, array $conditions = [], array $order = [], int $limit = -1): array
     {
         $where = '';
 
@@ -62,6 +62,14 @@ class Database implements DatabaseInterface
         }
 
         $sql = "SELECT * FROM $table $where";
+
+        if (count($order) > 0) {
+            $sql .= ' ORDER BY '.implode(', ', array_map(fn ($field, $direction) => "$field $direction", array_keys($order), $order));
+        }
+
+        if ($limit > 0) {
+            $sql .= " LIMIT $limit";
+        }
 
         $stmt = $this->pdo->prepare($sql);
 
