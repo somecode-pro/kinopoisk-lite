@@ -9,6 +9,8 @@ use App\Kernel\Storage\StorageInterface;
 
 class View implements ViewInterface
 {
+    private string $title;
+
     public function __construct(
         private SessionInterface $session,
         private AuthInterface $auth,
@@ -16,8 +18,10 @@ class View implements ViewInterface
     ) {
     }
 
-    public function page(string $name, array $data = []): void
+    public function page(string $name, array $data = [], string $title = ''): void
     {
+        $this->title = $title;
+
         $viewPath = APP_PATH."/views/pages/$name.php";
 
         if (! file_exists($viewPath)) {
@@ -52,5 +56,10 @@ class View implements ViewInterface
             'auth' => $this->auth,
             'storage' => $this->storage,
         ];
+    }
+
+    public function title(): string
+    {
+        return $this->title;
     }
 }

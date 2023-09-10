@@ -13,6 +13,6 @@ class HomeController extends Controller
 
         $this->view('home', [
             'movies' => $movies->new(),
-        ]);
+        ], 'Главная страница');
     }
 }

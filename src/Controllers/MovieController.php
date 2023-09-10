@@ -96,9 +96,11 @@ class MovieController extends Controller
 
     public function show(): void
     {
+        $movie = $this->service()->find($this->request()->input('id'));
+
         $this->view('movie', [
-            'movie' => $this->service()->find($this->request()->input('id')),
-        ]);
+            'movie' => $movie,
+        ], "Фильм - {$movie->name()}");
     }
 
     private function service(): MovieService
