@@ -37,6 +37,11 @@ class Request implements RequestInterface
         return $this->post[$key] ?? $this->get[$key] ?? $default;
     }
 
+    public function file(string $key): ?array
+    {
+        return $this->files[$key] ?? null;
+    }
+
     public function setValidator(ValidatorInterface $validator): void
     {
         $this->validator = $validator;

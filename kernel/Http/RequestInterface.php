@@ -14,6 +14,8 @@ interface RequestInterface
 
     public function input(string $key, $default = null): mixed;
 
+    public function file(string $key): ?array;
+
     public function setValidator(ValidatorInterface $validator): void;
 
     public function validate(array $rules): bool;
