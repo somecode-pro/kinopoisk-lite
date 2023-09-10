@@ -42,4 +42,31 @@ class CategoryService
             'name' => $name,
         ]);
     }
+
+    public function find(int $id): ?Category
+    {
+        $category = $this->db->first('categories', [
+            'id' => $id,
+        ]);
+
+        if (! $category) {
+            return null;
+        }
+
+        return new Category(
+            id: $category['id'],
+            name: $category['name'],
+            createdAt: $category['created_at'],
+            updatedAt: $category['updated_at']
+        );
+    }
+
+    public function update(int $id, string $name): void
+    {
+        $this->db->update('categories', [
+            'name' => $name,
+        ], [
+            'id' => $id,
+        ]);
+    }
 }
