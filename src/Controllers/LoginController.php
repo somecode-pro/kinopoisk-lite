@@ -16,6 +16,15 @@ class LoginController extends Controller
         $email = $this->request()->input('email');
         $password = $this->request()->input('password');
 
-        dd($this->auth()->attempt($email, $password), $_SESSION);
+        $this->auth()->attempt($email, $password);
+
+        $this->redirect('/home');
+    }
+
+    public function logout(): void
+    {
+        $this->auth()->logout();
+
+        $this->redirect('/login');
     }
 }
