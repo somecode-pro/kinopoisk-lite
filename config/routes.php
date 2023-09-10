@@ -29,4 +29,5 @@ return [
     Route::post('/admin/movies/update', [MovieController::class, 'update']),
     Route::get('/movie', [MovieController::class, 'show']),
     Route::post('/reviews/add', [ReviewController::class, 'store']),
+    Route::get('/categories', [CategoryController::class, 'index']),
 ];

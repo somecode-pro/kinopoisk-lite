@@ -59,6 +59,10 @@ class Movie
             return $review->rating();
         }, $this->reviews);
 
+        if (count($ratings) === 0) {
+            return 0;
+        }
+
         return round(array_sum($ratings) / count($ratings), 1);
     }
 }
