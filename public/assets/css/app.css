@@ -1,0 +1,73 @@
+body {
+    background: #2b3035;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.warn__badge {
+    color: #2b3035;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.movies__item {
+    transition: .2s ease;
+}
+
+.movies__item img {
+    object-fit: cover;
+}
+
+.movies__item:hover {
+    box-shadow: 0 0 0 2px #ffc107;
+}
+
+.movies__item:active {
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.66);
+}
+
+.one-movie__image {
+    margin: 10px;
+}
+
+.one-movie__reviews {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    /*max-height: 500px;*/
+    /*overflow-y: scroll;*/
+    padding: 10px 10px 10px 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
